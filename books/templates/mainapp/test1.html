@@ -1,0 +1,34 @@
+<!-- #5.AS SOON AS WE IMPORT SETTING , ]+STATIC(.......)  WE SHOULD IMPORT IN HEADER THE  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLtest</title>
+</head>    
+<body>
+    <h1>TEST FOR  HTML</h1>
+
+    {% for image in imageList %}
+       <img src="{{media_url}}images/{{image}}" style=" height:150px ;width:250px; border:5;" alt="My Picture">   
+
+
+    {% endfor  %}
+
+
+
+
+
+
+    <!-- <img src="/media/images/th.jfif" style="width: 300; height: 250px; border-radius: 5 px" alt="My Picture" >
+    <br>
+    <img src="/media/images/th1.jfif" style="width: 300; height: 250px; border-radius: 5 px" alt="My Picture" > -->
+
+
+
+
+    
+</body>
+</html>

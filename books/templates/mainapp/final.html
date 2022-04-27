@@ -1,0 +1,59 @@
+<!-- 4 After using css in our progamme we should Declare it here  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>final2</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %} "> 
+    <link rel="stylesheet" href="/static/css/style.css">  -->
+    <!-- # 4 will added after we create css -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <!-- if we make above syntax comment it  makes our website pink color otherwise it makes white 
+
+</head>
+<ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+<body>
+
+    <!-- for first picture on our webt this is enough  BUT -->
+   <img src="/media/images/th.jfif" alt="My Picture">
+
+    <!-- for media_url with its context in step 10 requires this  -->
+    <!-- <img src="{{media_url}}images/th.jfif" alt="My Picture"> -->
+
+
+    <!-- <img src="{{media_url}}images/{{imageName}}" alt="My Picture"> -->
+
+    
+
+    <!-- To have a list of Images from pythong we can have this : -->
+
+
+
+
+
+{% comment %} #============================================================================================= {% endcomment %}
+{% comment %}     
+    
+    {% endfor%}
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> {% endcomment %}
+</body>
+</html>

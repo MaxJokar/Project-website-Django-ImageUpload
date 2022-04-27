@@ -1,0 +1,19 @@
+<div class="blog-item">
+
+    {% comment %} {%   for blog in blogList %}  {% endcomment %}
+    {% for key,value in blog.items %}
+        {% if key == 'imagename' %}
+                <img src="{{media_url}}images/{{value}}" alt="Photo" class="blog-img">
+            {%  elif key == 'blogTitle' %}
+                <a href="#">         
+                    <h3>{{value}}</h3>
+                </a>
+            {%  elif key == 'summeryDesctiption' %}
+                <div>{{value}}</div>
+            {%  elif key == 'registerDate' %}
+                <span>{{value}}</span>
+        {% endif %}
+    {% endfor %} 
+
+
+</div>

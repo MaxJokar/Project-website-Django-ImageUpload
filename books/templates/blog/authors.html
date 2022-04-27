@@ -1,0 +1,61 @@
+{%  extends  'maintemplate.html' %}
+
+
+
+{% block content %} 
+    
+    <h1 class="blog-title"> List of Authors</h1>
+<table border="1" width="1000" style="margin: 0 auto ;">
+       
+        <tr>
+            
+            <th> Photo </th>
+            <th>subject :</th>
+            <th>Name of  Tutor:</th>
+            <th>Surname:</th> 
+            <th>age :</th>
+            <th></th>
+
+
+        </tr>
+        <!-- <img src="/media/images/busi.jpg" alt="NooouuuoooYYYo">
+        <img src="{{media_url}}/images/busi.jpg" alt="Two pic ">
+        <img src="{{media_url}}/people/authors/th4.jfif" alt="Threeee pic "> -->
+        {% for author in authors %}   
+            <tr>
+                <td>
+                     <img src="{{media_url}}images/people/authors/{{author.image_name}}" class="author-img"  alt=" AAAA ">
+                  
+                </td>
+                <td>{{author.id}}</td>
+                <td>{{author.name}}</td>
+                <td>{{author.family}}</td>
+                <td>{{author.age}}</td>
+                <td>
+                    <!-- <a href="#">Description</a> -->
+                    <a href="author/{{author.id}}">Description</a>
+                </td>
+                    
+                            
+            </tr>
+        {% endfor %}  
+               
+
+</table>
+
+
+{% endblock %}
+
+
+{% block title %}
+    Authors  of artists 
+{% endblock  %}
+
+
+        
+
+
+
+
+
+ 
