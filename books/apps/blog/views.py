@@ -7,7 +7,8 @@ from .models import *
 from django.core.files.storage import FileSystemStorage
 import os 
 import datetime
-from django.conf import settings
+# from django.conf import settings
+# from django.core.mail import send_mass_mail,EmailMultiAlternatives
 
 
 # from multiprocessing import context
@@ -40,6 +41,26 @@ def index(request):
         }
     return render(request,"blog/index.html",context)
 
+#https:/www.google.come/settings/security/lessencureapps
+from django.core.mail import send_mail,EmailMultiAlternatives
+from django.conf import settings
+
+def sendEmail(subject , message, to): #to should be  a list 
+    email_from=settings.EMAIL_HOST_USER #this is  Sender! from the setting  from here that sender email is here ==>sender
+    send_mail(subject,message,email_from,to) # we call the function send_mail 
+
+
+
+def sendEmail2(subject , message, html_content,to): #to give content with HTML  we should use this one  html_content!
+    email_from=settings.EMAIL_HOST_USER #fromwhere you want to send ?from the email I made
+    send_mail(subject,message,email_from,to)
+    sendEmail=EmailMultiAlternatives(subject,message,email_from,to)
+    message.attach_alternative(html_content,"text/html")
+    message.send()
+
+
+
+
 
 def create_blog(request):
     if request.method=="POST":
@@ -66,24 +87,27 @@ def create_blog(request):
                     #Below is dedicated to storage  our file
                     fss=FileSystemStorage()    #These part  is save of file  on the server
                     fss.save(imagePath,iamgeUpload) # (address'name address and place of save ', imageupload=the file wants to save )
+                    # sendEmail("Save of Articles","Article succesfully Saved",['maksimjokar@gmail.com'])
+                    sendEmail2("Save of Articles 3","","Article succesfully Saved",['maksimjokar@gmail.com'])
+                    
                     return redirect(request,"blog/index.html")
                 else:
-                        context={
-                                'form':form, #those context come from form should have  the main  form 
-                                'message':'the type of file is not correct: jpg or png Only'
+                    context={
+                            'form':form, #those context come from form should have  the main  form 
+                            'message':'the type of file is not correct: jpg or png Only'
                         }
-        else:
-            context={
+            else:
+                context={
                     'form':form, #those context come from form should have  the main  form 
                     'message':'the size must not More than 10 kilo Byte'
                 }
-    else:
-        form=BlogForm()
-        context={
+        else:
+            form=BlogForm()
+            context={
             'form':form,
-        }
+            }
         
-        return render(request,"blog/create.html",context)
+    return render(request,"blog/create.html",context)
 
 
 

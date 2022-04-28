@@ -132,3 +132,21 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Here these information are write constantly to  use them in our Project :
+EMAIL_BACKEND='django.core.mail.backend.smtp.EmailBackend'   # a Module , Django sends all Automatically
+EMAIL_HOST='smtp.gmail.com' # The name of  Host that gives the service of smtp.=>Email host from our host must be written here info@Maxjokar.com
+EMAL_USE_TLS=True  #use from the Authority of ssl, increase the secutiry ,usually its False but we change it into True to rise security
+EMAIL_PORT=587  # Transfered Port which Gmail site says  its  578 is open to use it 
+EMAIL_HOST_USER='emailtestfordjango@gmail.com' # Email Address
+EMAIL_HOST_PASSWORD='2022981898181358bb2022' #Email Password of the Sender , not the User !
+
+
+
+
+
+
+
+
+
+
